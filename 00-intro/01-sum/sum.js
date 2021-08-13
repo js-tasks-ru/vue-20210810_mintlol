@@ -6,5 +6,12 @@
  * @return {number} сумма чисел a и b
  */
 export function sum(a, b) {
-  // Решение
+  // if (a + b) {
+  //   return a + b
+  // }
+  // else {
+  //   return 'Введите 2 числа'
+  // }
+
+  return a + b;
 }

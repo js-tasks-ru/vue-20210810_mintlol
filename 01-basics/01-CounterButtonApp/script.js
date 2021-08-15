@@ -1,14 +1,14 @@
 import { createApp } from './vendor/vue.esm-browser.js';
 
 const Root = {
-    name: 'Root',
+  name: 'Root',
 
-    data() {
-        return {
-            counter: 0
-        }
-    }
-}
+  data() {
+    return {
+      counter: 0,
+    };
+  },
+};
 
 const app = createApp(Root);
 

@@ -37,30 +37,28 @@ const Root = {
         search: '',
       },
       filteredEmails: [],
-    }
+    };
   },
 
-  computed : {
+  computed: {
     filterEmails() {
-      const searchFilter = (email) => 
-      email.toLowerCase()
-      .includes(this.filter.search.toLowerCase());
+      const searchFilter = (email) => email.toLowerCase().includes(this.filter.search.toLowerCase());
 
       if (this.filter.search == '') {
-        return []
+        return [];
       }
-      
+
       return this.emails.filter((email) => searchFilter(email));
-    }
+    },
   },
   methods: {
     checkInFiltered(email) {
-      return this.filteredEmails.includes(email)
-    }
-  }
-}
+      return this.filteredEmails.includes(email);
+    },
+  },
+};
 
-const app = createApp(Root)
+const app = createApp(Root);
 
 const vm = app.mount('#app');
 

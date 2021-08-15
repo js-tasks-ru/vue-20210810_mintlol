@@ -5,7 +5,7 @@
  * \/\*#\_\_PURE\_\_\*\/
  * So that rollup can tree-shake them if necessary.
  */
-function makeMap(str, expectsLowerCase) {
+ function makeMap(str, expectsLowerCase) {
   const map = Object.create(null);
   const list = str.split(',');
   for (let i = 0; i < list.length; i++) {

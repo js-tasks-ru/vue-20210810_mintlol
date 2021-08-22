@@ -7,15 +7,21 @@
   <body>
     <div id="app">
       <div>
-        <label><input type="radio" value="1" /> 1</label>
-        <label><input type="radio" value="2" /> 2</label>
-        <label><input type="radio" value="3" /> 3</label>
-        <label><input type="radio" value="4" /> 4</label>
-        <label><input type="radio" value="5" /> 5</label>
+
+        <label v-for="el in 5">
+          <input type="radio" name="radio" :value="el" v-model="checked">
+          {{ el }}
+        </label>
+<!-- 
+        <label><input type="radio" value="1" name="radio" @click="checked = 1"/> 1</label>
+        <label><input type="radio" value="2" name="radio" @click="checked = 2"/> 2</label>
+        <label><input type="radio" value="3" name="radio" @click="checked = 3"/> 3</label>
+        <label><input type="radio" value="4" name="radio" @click="checked = 4"/> 4</label>
+        <label><input type="radio" value="5" name="radio" @click="checked = 5"/> 5</label> -->
 
         <hr />
 
-        <h3>MEETUP_TITLE</h3>
+        <h3>{{ meetup.title }}</h3>
       </div>
     </div>
 

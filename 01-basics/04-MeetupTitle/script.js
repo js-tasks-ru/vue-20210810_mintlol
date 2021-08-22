@@ -21,17 +21,21 @@ const Root = {
       checked: 1,
     };
   },
-  created() {
-    fetchMeetupById(1).then((meetup) => {
-      this.meetup = meetup;
-    });
-  },
+
   watch: {
-    checked(newValue) {
-      fetchMeetupById(newValue).then((meetup) => {
-        this.meetup = meetup;
-      });
-    },
+    checked: {
+      immediate: true,
+      handler(NewChecked) {
+        fetchMeetupById(NewChecked).then((meetup) => {
+          this.meetup = meetup;
+        });
+      }
+    }
+    // checked(checked) {
+    //   fetchMeetupById(checked).then((meetup) => {
+    //     this.meetup = meetup;
+    //   });
+    // },
   },
 };
 const app = createApp(Root);

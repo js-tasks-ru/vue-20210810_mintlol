@@ -15,15 +15,14 @@
       <div class="container">
         <div class="form-group">
           <input 
-            @input="filter.search = $event.target.value; filteredEmails = filterEmails" 
-            :value="filter.search" 
+             v-model="search"
             type="search" />
         </div>
         <ul>
           <li 
-          v-for="email in emails"
-          :class = "{'marked' : checkInFiltered(email)}"
-          >{{ email }}</li>
+          v-for="email in emailsSearched"
+          :class = "{'marked' : email.isMarked}"
+          >{{ email.emailName }}</li>
         </ul>
       </div>
     </div>

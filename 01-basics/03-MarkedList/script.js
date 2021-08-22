@@ -33,34 +33,21 @@ const Root = {
   data() {
     return {
       emails,
-      filter: {
-        search: '',
-      },
-      filteredEmails: [],
+      search: '',
     };
   },
 
   computed: {
-    filterEmails() {
-      const searchFilter = (email) => email.toLowerCase().includes(this.filter.search.toLowerCase());
-
-      if (this.filter.search == '') {
-        return [];
-      }
-
-      return this.emails.filter((email) => searchFilter(email));
-    },
-  },
-  methods: {
-    checkInFiltered(email) {
-      return this.filteredEmails.includes(email);
+    emailsSearched() {
+      return this.emails.map((email) => {
+        let isMarked = this.search !== '' && email.toLowerCase().includes(this.search.toLowerCase());
+        return {emailName: email, isMarked: isMarked}
+        }
+      )
     },
   },
 };
 
-const app = createApp(Root);
+const app = createApp(Root).mount('#app');
 
-const vm = app.mount('#app');
-
-window.vm = vm;
 // Требуется создать Vue приложение

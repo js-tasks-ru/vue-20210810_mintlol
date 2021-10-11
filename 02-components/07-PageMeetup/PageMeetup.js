@@ -22,15 +22,18 @@ export default defineComponent({
 
   data() {
     return {
-      meetup: '',
+      meetup: undefined,
       meetupLoaded: false,
       meetupError: undefined,
     }
   },
 
   watch: {
-    meetupId(newValue) {
-      this.updateMeetup(newValue)
+    meetupId: {
+      immediate: true,
+      handler(newValue) {
+        this.updateMeetup(newValue)
+      },
     }
   },
 

@@ -55,5 +55,8 @@
   "browserslist": [
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "volta": {
+    "node": "14.17.5"
+  }
 }
